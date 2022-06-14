@@ -2,6 +2,7 @@ from datetime import date
 from datetime import datetime
 import math
 import time
+import hashlib
 
 def hash(palabra):
  
@@ -18,7 +19,7 @@ def hash(palabra):
     58:'W',59:'X',60:'Y',61:'Z',62:' ', 63:',', 64:'.', 65:';', 66:':', 67:'-', 68:'_', 69:'!', 70:'?', 71:'¡', 72:'¿', 73:'"', 74:"'"}
 
     #tomamos el tamaño y el valor de la primera letra del string en el diccionario
-    #verificamos si el primer caracter se encuentra en el diccionario
+    #verificamos si el caracter se encuentra en el diccionario
     size2 = int(len(palabra))
     
     if palabra[0] not in diccionario.keys():
@@ -53,19 +54,20 @@ def hash(palabra):
     today = date.today()
     today = today.day + 5
 
-    #generamos el arreglo que contiene los pesos y verificamos si el caracter actual se encuentra en el diccionario
+    #Generemos el arreglo que ha de contener los pesos y se realiza la verificación respectiva, es decir
+    #se revisa si el caracter actual se encuentra en el diccionario definido anteriormente
     new_palabra = []
     count = 1
     for i in palabra:
         new_palabra.append(int(diccionario.get(i))+today+count)
         count = count + 1
     
-    #YA GENERADOS LOS PESOS EN EL ARREGLO SE PROCEDE A CONVERTILOS A PALABRA
+    #Una vez que se generan los pesos del arreglo, se procede a convertilo en palabra
     contadordivision = 0
     salida = ""
     suma = 0
 
-    #convertimos los numeros a letras ajustandolos al hash
+    #Los números se convierten en letras, de esta forma se ajusta al hash
     for i in range(newlen):
         if(contadordivision == division-1):
             suma = suma + new_palabra[i] 
@@ -99,7 +101,7 @@ def hash(palabra):
 def entropia(palabra):
     numeros = "0123456789"
     letras = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    especial = "  , . ; : - _ ! ? ¡ ¿ \" ' "
+    especial = ",.;:-_!?¡¿\ '"
 
     size = len(palabra)
 
@@ -150,6 +152,9 @@ decision1 = int(input("Ingrese una opcion: "))
 if(decision1 == 1):
     palabra = input("Ingrese una palabra: ")
     hash(palabra)
+    hashlib.md5(palabra.encode()).hexdigest()
+    hashlib.sha256(palabra.encode()).hexdigest()
+    hashlib.sha1(palabra.encode()).hexdigest()
  
         
 elif decision1 == 2:
