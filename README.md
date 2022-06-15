@@ -31,3 +31,5 @@
 6- Por último, para obtener la generación del hash, se suma cada _contadordivision_ obteniendo un valor y posteriormente dicho valor es transformado para que se logre ubicar dentro del diccionario. Dicha transformación tiene que volver a la posición inicial del diccionario cada vez que llegue al final de diccionario. Una vez que se tiene la posición para los valores establecidos, se va guardando dentro de la variable salida, y después repetimos el ciclo para ir generando el hash
 
 7- Para obtener la entropía del _hash_ básicamente se hace uso de la operación matemática para obtenerlo.
+
+8- Se resalta que se aplica funciones de los hashes _MD5_, _SHA1_, _SHA256_ para comprobar el tema de los tiempos.
