@@ -107,7 +107,31 @@ def tiempo(palabra):
     inicio = time.time()
     hash(palabra)
     fin = time.time()
-    print("El tiempo de ejecución es: ", fin-inicio)
+    print("El tiempo de ejecución HASH LABORATORIO es: ", fin-inicio)
+
+def md5xd(palabra):
+    inicio = time.time()
+    md5 = hashlib.md5(palabra.encode())
+    fin = time.time()
+    print("El hash MD5 de: ",palabra," es: ")
+    print(md5.hexdigest())
+    print("El tiempo de ejecución MD5 es: ", fin-inicio)
+
+def sha1xd(palabra):
+    inicio = time.time()
+    sha1 = hashlib.sha1(palabra.encode())
+    fin = time.time()
+    print("El hash SHA1 de: ",palabra," es: ")
+    print(sha1.hexdigest())
+    print("El tiempo de ejecución SHA1 es: ", fin-inicio)
+
+def sha256xd(palabra):
+    inicio = time.time()
+    sha256 = hashlib.sha256(palabra.encode())
+    fin = time.time()
+    print("El hash SHA256 de: ",palabra," es: ")
+    print(sha256.hexdigest())
+    print("El tiempo de ejecución SHA256 es: ", fin-inicio)
 
 #al recibir el nombre lo convertimos como un string y lo pasamos al hash
 def archivo2(palabra):
@@ -131,7 +155,10 @@ decision1 = int(input("Ingrese una opcion: "))
 if(decision1 == 1):
     palabra = input("Ingrese una palabra: ")
     tiempo(palabra)
-        
+    md5xd(palabra)
+    sha1xd(palabra)
+    sha256xd(palabra)
+    entropia(palabra)
 elif decision1 == 2:
     nombre = input("Ingrese el path o direccion del archivo: ")
     archivo2(nombre)
