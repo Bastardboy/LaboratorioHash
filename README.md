@@ -14,3 +14,4 @@
 
 6- Si se elige la opción (2) se entrega el Hash propio y el tiempo que tardo en _Hashear_ el archivo.
 
+## Procedimiento
