@@ -107,7 +107,7 @@ def tiempo(palabra):
     inicio = time.time()
     hash(palabra)
     fin = time.time()
-    print("El tiempo de ejecución HASH LABORATORIO es: ", fin-inicio)
+    print("El tiempo de ejecución HASH LABORATORIO es: ", fin-inicio, "\n")
 
 def md5xd(palabra):
     inicio = time.time()
@@ -115,7 +115,7 @@ def md5xd(palabra):
     fin = time.time()
     print("El hash MD5 de: ",palabra," es: ")
     print(md5.hexdigest())
-    print("El tiempo de ejecución MD5 es: ", fin-inicio)
+    print("El tiempo de ejecución MD5 es: ", fin-inicio, "\n")
 
 def sha1xd(palabra):
     inicio = time.time()
@@ -123,7 +123,7 @@ def sha1xd(palabra):
     fin = time.time()
     print("El hash SHA1 de: ",palabra," es: ")
     print(sha1.hexdigest())
-    print("El tiempo de ejecución SHA1 es: ", fin-inicio)
+    print("El tiempo de ejecución SHA1 es: ", fin-inicio,"\n")
 
 def sha256xd(palabra):
     inicio = time.time()
@@ -131,7 +131,7 @@ def sha256xd(palabra):
     fin = time.time()
     print("El hash SHA256 de: ",palabra," es: ")
     print(sha256.hexdigest())
-    print("El tiempo de ejecución SHA256 es: ", fin-inicio)
+    print("El tiempo de ejecución SHA256 es: ", fin-inicio,"\n")
 
 #al recibir el nombre lo convertimos como un string y lo pasamos al hash
 def archivo2(palabra):
@@ -145,7 +145,43 @@ def archivo2(palabra):
         hash(linea.rstrip())
     f.close()
     fin = time.time()
-    print("Tiempo que demoro el hash: ", fin-inicio)
+    print("Tiempo que demoro el hash laboratorio: ", fin-inicio,"\n")
+
+def archivomd5(palabra):
+    inicio = time.time()
+    f = open (palabra,'r')
+    while(True):
+        linea = f.readline()
+        if not linea:
+            break
+        md5xd(linea.rstrip())
+    f.close()
+    fin = time.time()
+    print("Tiempo que demoro el hash MD5: ", fin-inicio,"\n")
+
+def archivosha1(palabra):
+    inicio = time.time()
+    f = open (palabra,'r')
+    while(True):
+        linea = f.readline()
+        if not linea:
+            break
+        sha1xd(linea.rstrip())
+    f.close()
+    fin = time.time()
+    print("Tiempo que demoro el hash SHA1: ", fin-inicio,"\n")
+
+def archivosha256(palabra):
+    inicio = time.time()
+    f = open (palabra,'r')
+    while(True):
+        linea = f.readline()
+        if not linea:
+            break
+        sha256xd(linea.rstrip())
+    f.close()
+    fin = time.time()
+    print("Tiempo que demoro el hash SHA256: ", fin-inicio)
 
 print("La base utilizada es de 74 caracteres y son: 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ más salto de linea (, . ; : - _ ! ? ¡ ¿ \" ' )")
 print("1.- Ingresar palabra")
@@ -158,11 +194,13 @@ if(decision1 == 1):
     md5xd(palabra)
     sha1xd(palabra)
     sha256xd(palabra)
-    entropia(palabra)
+    
 elif decision1 == 2:
     nombre = input("Ingrese el path o direccion del archivo: ")
     archivo2(nombre)
-    
+    archivomd5(nombre)
+    archivosha1(nombre)
+    archivosha256(nombre)    
 
 else:
     print("Numero no valido")
