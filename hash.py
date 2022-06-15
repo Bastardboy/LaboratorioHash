@@ -54,8 +54,7 @@ def hash(palabra):
     diaHoy = date.today()
     diaHoy = diaHoy.day + 5
 
-    #Generemos el arreglo que ha de contener los pesos y se realiza la verificación respectiva, es decir
-    #se revisa si el caracter actual se encuentra en el diccionario definido anteriormente
+    #En la siguiente secci´on se crea un arreglo con los pesos de cada carácter sumado con el contador y la variable diaHoy. 
     Arr_Pesos = []
     count = 1
     for i in palabra:
