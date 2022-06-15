@@ -2,14 +2,10 @@
 
 ## Caso de Usos
 
-Características que posee el mensaje: 
-1- Se ha de ingresar un mensaje a través de la consola
-2- Este mensaje ha de tener carácteres permitidos
-3- Estos caracteres están definidos en diccionarios
-
-Operaciones que realiza el código:
-1- Se toma el **tamaño y el valor** de la primera letra del string en el diccionario.
-
-**OBSERVACIONES**: 1. Si el caracter no llegase a existir, se retorna un _-1_ el cual cierra el programa.
-                   2. Si la palabra le falta para completar los 55 caracteres solicitados,se completan con 0
+1- Se ha de ingresar una opción (1) Ingresar palabra o (2) Ingresar un archivo
+2- Este mensaje/archivo ha de tener carácteres permitidos
+3- Los carácteres permitidos están definidos previamente
+4- Se efectuan las operaciones definidas en el script
+5- Si se elige la opción (1) se entrega el Hash propio de esta
+6- Si se elige la opción (2) se entrega el Hash propio y el tiempo que tardo en _Hashear_ el archivo.
 
