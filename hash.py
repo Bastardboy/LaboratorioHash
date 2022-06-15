@@ -1,5 +1,4 @@
 from datetime import date
-from datetime import datetime
 import math
 import time
 import hashlib
@@ -98,9 +97,8 @@ def hash(palabra):
 
 #la entropia se calcula como el largo de la palabra ingresada por el logaritmo en base 2 de la base utilizada:
 def entropia(palabra):
-    numerobase = 74
-    logaritmo = math.log(numerobase,2)
-    entropia = logaritmo*55
+    entropia =55*math.log(74,2)
+
     print("La entropia de ",palabra," es: ", entropia) 
 
 def tiempo(palabra):
@@ -108,30 +106,38 @@ def tiempo(palabra):
     hash(palabra)
     fin = time.time()
     print("El tiempo de ejecución HASH LABORATORIO es: ", fin-inicio, "\n")
+    
 
 def md5xd(palabra):
     inicio = time.time()
     md5 = hashlib.md5(palabra.encode())
     fin = time.time()
+    entropia = 32*math.log(16,2)
     print("El hash MD5 de: ",palabra," es: ")
     print(md5.hexdigest())
-    print("El tiempo de ejecución MD5 es: ", fin-inicio, "\n")
+    print("El tiempo de ejecución MD5 es: ", fin-inicio)
+    print("La entropia de MD5",palabra," es: ", entropia,"\n")
+
 
 def sha1xd(palabra):
     inicio = time.time()
     sha1 = hashlib.sha1(palabra.encode())
     fin = time.time()
+    entropia = 40*math.log(16,2)
     print("El hash SHA1 de: ",palabra," es: ")
     print(sha1.hexdigest())
-    print("El tiempo de ejecución SHA1 es: ", fin-inicio,"\n")
+    print("El tiempo de ejecución SHA1 es: ", fin-inicio)
+    print("La entropia del SHA1",palabra," es: ", entropia,"\n")
 
 def sha256xd(palabra):
     inicio = time.time()
     sha256 = hashlib.sha256(palabra.encode())
     fin = time.time()
+    entropia = 64*math.log(16,2)
     print("El hash SHA256 de: ",palabra," es: ")
     print(sha256.hexdigest())
-    print("El tiempo de ejecución SHA256 es: ", fin-inicio,"\n")
+    print("El tiempo de ejecución SHA256 es: ", fin-inicio)
+    print("La entropia del SHA256",palabra," es: ", entropia,"\n")
 
 #al recibir el nombre lo convertimos como un string y lo pasamos al hash
 def archivo2(palabra):
@@ -194,7 +200,7 @@ if(decision1 == 1):
     md5xd(palabra)
     sha1xd(palabra)
     sha256xd(palabra)
-    
+
 elif decision1 == 2:
     nombre = input("Ingrese el path o direccion del archivo: ")
     archivo2(nombre)
