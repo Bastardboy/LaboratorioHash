@@ -49,17 +49,17 @@ def hash(palabra):
 
 
     #tomamos la nueva palabra, sus divisiones en 55 y el dia actual haciendo un corrimiento con este
-    newlen = int(len(palabra))
-    division = int(newlen/55)
-    today = date.today()
-    today = today.day + 5
+    guardarLargo = int(len(palabra))
+    division = int(guardarLargo/55)
+    diaHoy = date.today()
+    diaHoy = diaHoy.day + 5
 
     #Generemos el arreglo que ha de contener los pesos y se realiza la verificación respectiva, es decir
     #se revisa si el caracter actual se encuentra en el diccionario definido anteriormente
-    new_palabra = []
+    Arr_Pesos = []
     count = 1
     for i in palabra:
-        new_palabra.append(int(diccionario.get(i))+today+count)
+        Arr_Pesos.append(int(diccionario.get(i))+diaHoy+count)
         count = count + 1
     
     #Una vez que se generan los pesos del arreglo, se procede a convertilo en palabra
@@ -68,9 +68,9 @@ def hash(palabra):
     suma = 0
 
     #Los números se convierten en letras, de esta forma se ajusta al hash
-    for i in range(newlen):
+    for i in range(guardarLargo):
         if(contadordivision == division-1):
-            suma = suma + new_palabra[i] 
+            suma = suma + Arr_Pesos[i] 
             contadordivision = 0
             
             if(suma<=74):
@@ -88,7 +88,7 @@ def hash(palabra):
                         num = num - 74
 
         else:
-            suma = suma + new_palabra[i]
+            suma = suma + Arr_Pesos[i]
             contadordivision = contadordivision + 1
     
 
@@ -107,25 +107,29 @@ def entropia(palabra):
 
     flag = True
     contador = 0
-    n = 0
-    l = 0
-    e = 0
+    contadorn = 0
+    contadorl = 0
+    contadorE = 0
 
-    contador = 0
+    num = 0
+    let = 0
+    esp = 0
+
     while(flag):
         if(contador + 1) < size:
             contador = contador + 1
-            if numeros.count(palabra[contador]) > 0 : n = 10 
-            if letras.count(palabra[contador]) > 0 : l = 52 
-            if especial.count(palabra[contador]) > 0 : e = 13
 
-            if(n!=0 and l!=0 and e!=0):
+            if numeros.count(palabra[contadorn]) > 0 : num = 10 
+            if letras.count(palabra[contadorl]) > 0 : let = 52 
+            if especial.count(palabra[contadorE]) > 0 : esp = 13
+
+            if(num!=0 and let!=0 and esp!=0):
                 flag = False
         else:
             flag = False
 
-    numerobase = n+l+e
-    logaritmo = math.log(numerobase,2)
+    numerobase = num+let+esp
+    logaritmo = math.log(numerobase)
     entropia = logaritmo
     print("La entropia de ",palabra," es: ", entropia) 
 
@@ -142,7 +146,7 @@ def archivo2(palabra):
         hash(linea.rstrip())
     f.close()
     fin = time.time()
-    print(fin - inicio) 
+    print("Tiempo que demoro el hash: ", fin-inicio)
 
 print("La base utilizada es de 74 caracteres y son: 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ más salto de linea (, . ; : - _ ! ? ¡ ¿ \" ' )")
 print("1.- Ingresar palabra")
@@ -151,11 +155,7 @@ decision1 = int(input("Ingrese una opcion: "))
 
 if(decision1 == 1):
     palabra = input("Ingrese una palabra: ")
-    hash(palabra)
-    hashlib.md5(palabra.encode()).hexdigest()
-    hashlib.sha256(palabra.encode()).hexdigest()
-    hashlib.sha1(palabra.encode()).hexdigest()
- 
+    hash(palabra) 
         
 elif decision1 == 2:
     nombre = input("Ingrese el path o direccion del archivo: ")
