@@ -99,40 +99,16 @@ def hash(palabra):
 
 #la entropia se calcula como el largo de la palabra ingresada por el logaritmo en base 2 de la base utilizada:
 def entropia(palabra):
-    numeros = "0123456789"
-    letras = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    especial = ",.;:-_!?¡¿\ '"
-
-    size = len(palabra)
-
-    flag = True
-    contador = 0
-    contadorn = 0
-    contadorl = 0
-    contadorE = 0
-
-    num = 0
-    let = 0
-    esp = 0
-
-    while(flag):
-        if(contador + 1) < size:
-            contador = contador + 1
-
-            if numeros.count(palabra[contadorn]) > 0 : num = 10 
-            if letras.count(palabra[contadorl]) > 0 : let = 52 
-            if especial.count(palabra[contadorE]) > 0 : esp = 13
-
-            if(num!=0 and let!=0 and esp!=0):
-                flag = False
-        else:
-            flag = False
-
-    numerobase = num+let+esp
-    logaritmo = math.log(numerobase)
-    entropia = logaritmo
+    numerobase = 74
+    logaritmo = math.log(numerobase,2)
+    entropia = logaritmo*55
     print("La entropia de ",palabra," es: ", entropia) 
 
+def tiempo(palabra):
+    inicio = time.time()
+    hash(palabra)
+    fin = time.time()
+    print("El tiempo de ejecución es: ", fin-inicio)
 
 #al recibir el nombre lo convertimos como un string y lo pasamos al hash
 def archivo2(palabra):
@@ -155,7 +131,7 @@ decision1 = int(input("Ingrese una opcion: "))
 
 if(decision1 == 1):
     palabra = input("Ingrese una palabra: ")
-    hash(palabra) 
+    tiempo(palabra)
         
 elif decision1 == 2:
     nombre = input("Ingrese el path o direccion del archivo: ")
