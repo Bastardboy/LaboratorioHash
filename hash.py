@@ -115,9 +115,13 @@ def md5xd(palabra):
     entropia = 32*math.log(16,2)
     print("El hash MD5 de: ",palabra," es: ")
     print(md5.hexdigest())
-    print("El tiempo de ejecución MD5 es: ", fin-inicio)
     print("La entropia de MD5",palabra," es: ", entropia,"\n")
 
+def tiempoMD5(palabra):
+    inicio = time.time()
+    md5xd(palabra)
+    fin = time.time()
+    print("El tiempo de ejecución MD5 LABORATORIO es: ", fin-inicio, "\n")
 
 def sha1xd(palabra):
     inicio = time.time()
@@ -126,8 +130,13 @@ def sha1xd(palabra):
     entropia = 40*math.log(16,2)
     print("El hash SHA1 de: ",palabra," es: ")
     print(sha1.hexdigest())
-    print("El tiempo de ejecución SHA1 es: ", fin-inicio)
     print("La entropia del SHA1",palabra," es: ", entropia,"\n")
+
+def tiempoSHA1(palabra):
+    inicio = time.time()
+    sha1xd(palabra)
+    fin = time.time()
+    print("El tiempo de ejecución SHA1 LABORATORIO es: ", fin-inicio, "\n")
 
 def sha256xd(palabra):
     inicio = time.time()
@@ -136,8 +145,13 @@ def sha256xd(palabra):
     entropia = 64*math.log(16,2)
     print("El hash SHA256 de: ",palabra," es: ")
     print(sha256.hexdigest())
-    print("El tiempo de ejecución SHA256 es: ", fin-inicio)
     print("La entropia del SHA256",palabra," es: ", entropia,"\n")
+
+def tiempoSHA256(palabra):
+    inicio = time.time()
+    sha256xd(palabra)
+    fin = time.time()
+    print("El tiempo de ejecución SHA256 LABORATORIO es: ", fin-inicio, "\n")
 
 #al recibir el nombre lo convertimos como un string y lo pasamos al hash
 def archivo2(palabra):
@@ -197,9 +211,9 @@ decision1 = int(input("Ingrese una opcion: "))
 if(decision1 == 1):
     palabra = input("Ingrese una palabra: ")
     tiempo(palabra)
-    md5xd(palabra)
-    sha1xd(palabra)
-    sha256xd(palabra)
+    tiempoMD5(palabra)
+    tiempoSHA1(palabra)
+    tiempoSHA256(palabra)
 
 elif decision1 == 2:
     nombre = input("Ingrese el path o direccion del archivo: ")
