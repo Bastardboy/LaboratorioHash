@@ -33,7 +33,7 @@ def hash(palabra):
             flag = False
         else:
             if (len(palabra)+2)%55==0:
-                contador = contador + 2
+                contador = contador -1
                 if (primera+contador) <= 74: 
                     palabra = palabra + str(diccionario2[primera+contador])
                     palabra =  str(diccionario2[primera+contador]) + palabra
