@@ -106,9 +106,7 @@ def tiempo(palabra):
     
 
 def md5xd(palabra):
-    inicio = time.time()
     md5 = hashlib.md5(palabra.encode())
-    fin = time.time()
     entropia = 32*math.log(16,2)
     print("El hash MD5 de: ",palabra," es: ")
     print(md5.hexdigest())
@@ -121,9 +119,7 @@ def tiempoMD5(palabra):
     print("El tiempo de ejecución MD5 LABORATORIO es: ", fin-inicio, "\n")
 
 def sha1xd(palabra):
-    inicio = time.time()
     sha1 = hashlib.sha1(palabra.encode())
-    fin = time.time()
     entropia = 40*math.log(16,2)
     print("El hash SHA1 de: ",palabra," es: ")
     print(sha1.hexdigest())
@@ -136,9 +132,7 @@ def tiempoSHA1(palabra):
     print("El tiempo de ejecución SHA1 LABORATORIO es: ", fin-inicio, "\n")
 
 def sha256xd(palabra):
-    inicio = time.time()
     sha256 = hashlib.sha256(palabra.encode())
-    fin = time.time()
     entropia = 64*math.log(16,2)
     print("El hash SHA256 de: ",palabra," es: ")
     print(sha256.hexdigest())
