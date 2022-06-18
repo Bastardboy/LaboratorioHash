@@ -34,7 +34,7 @@ def hash(palabra):
             if (len(palabra)+2)%55==0:
                 contador = contador -1
                 if (primera+contador) <= 74: 
-                    palabra = palabra + str(diccionario2[primera+contador])
+                    palabra = palabra + str(diccionario2[primera+contador]) 
                     palabra =  str(diccionario2[primera+contador]) + palabra
                 else:
                     primera = 0
@@ -54,7 +54,7 @@ def hash(palabra):
 
     #En la siguiente sección se crea un arreglo con los pesos de cada carácter sumado con el contador y la variable diaHoy. 
     Arr_Pesos = []
-    count = 1
+    count = 0
     for i in palabra:
         Arr_Pesos.append(int(diccionario.get(i))+diaHoy+count)
         count = count + 1
