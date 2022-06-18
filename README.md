@@ -10,15 +10,20 @@
 
 4- Se efectuan las operaciones definidas en el script
 
-5- Si se elige la opción (1) se entrega el Hash propio de esta
+5- Si se elige la opción (1) se entrega el Hash propio de esta con el tiempo y la entropia.
 
 6- Si se elige la opción (2) se entrega el Hash propio y el tiempo que tardo en _Hashear_ el archivo.
+
+El uso que se puede usar para este HASH es el de funcionar como un token, donde al enviar dicho token lo use para confirmar alguna confirmación en el sistema
 
 ## Procedimiento
 
 1- Se toma el _String_ ingresado, y se toma los parámetros **Tamaño y Valor** y se verifica si está en el diccionario definido
 
-1.1- Como observación, se tiene que si no tiene un largo de 55, se ha de completar con un _padding_ el cual será con valor 0.
+2- Se bifucar en dos caminos, si cumple que posee 55 caracteres el mensaje, y si no posee los 55 caracteres.
+
+2.1- En caso de no cumplir, primero se le suma +2 y se vuelve a comprobar.
+2.2- Si no lo cumple, se le agrega una letra, al inicio de la palabra ingresada (HOLA), el valor del largo sería 4, y se le suma 2, entonces sigue sin cumplir que el resto de la división sea igual a 0, por lo cual se le ha de ir agregando una letra al inicio de la palabra
 
 2- Se verifica si el modulo de 55 corresponde a 0 para poder dividirla luego en 55 tener un y tener un numero entero. En caso de que no sea el caso se agregan dos caracteres al inicio y al final de la palabra para poder llegar a efectuar dicha operación. El carácter a elegir se obtiene a partir de la posición de la primera letra más el contador del ciclo. Por ultimo se verifica si el número del carácter está dentro del diccionario, si no es así se ubica la primera posición y se calcula otra vez. El string resultante es palabra
 
