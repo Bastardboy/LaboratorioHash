@@ -52,7 +52,7 @@ def hash(palabra):
     diaHoy = date.today()
     diaHoy = diaHoy.day + 5
 
-    #En la siguiente secci´on se crea un arreglo con los pesos de cada carácter sumado con el contador y la variable diaHoy. 
+    #En la siguiente sección se crea un arreglo con los pesos de cada carácter sumado con el contador y la variable diaHoy. 
     Arr_Pesos = []
     count = 1
     for i in palabra:
