@@ -2,7 +2,7 @@
 
 ## Caso de Usos
 
-1- Se ha de ingresar una opción (1) Ingresar palabra o (2) Ingresar un archivo \
+1- Se ha de ingresar una opción (1) Ingresar palabra o (2) Ingresar un archivo
 
 2- Este mensaje/archivo ha de tener carácteres permitidos
 
