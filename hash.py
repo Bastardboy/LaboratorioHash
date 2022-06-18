@@ -26,10 +26,10 @@ def hash(palabra):
 
     #La idea de esta parte de código es verificar si el modulo de 55 es 0 
     #para poder dividirla luego en 55 tener un numero entero y terminar obteniendo "palabra"
-    flag = True
-    while(flag):
+    booleano = True
+    while(booleano):
         if(len(palabra)%55==0):
-            flag = False
+            booleano = False
         else:
             if (len(palabra)+2)%55==0:
                 contador = contador -1
@@ -73,11 +73,11 @@ def hash(palabra):
             if(suma<=74):
                 salida = salida + str(diccionario2.get(suma))
             else:
-                flag = True
+                booleano = True
                 num = suma
-                while(flag):
+                while(booleano):
                     if(num <= 74):
-                        flag = False
+                        booleano = False
                         salida = salida + str(diccionario2.get(num))
                         num = suma
                         
