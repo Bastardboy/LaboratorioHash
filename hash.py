@@ -24,6 +24,8 @@ def hash(palabra):
     primera = diccionario[palabra[0]]
     contador = 0
 
+    #La idea de esta parte de código es verificar si el modulo de 55 es 0 
+    #para poder dividirla luego en 55 tener un numero entero y terminar obteniendo "palabra"
     flag = True
     while(flag):
         if(len(palabra)%55==0):
@@ -50,7 +52,7 @@ def hash(palabra):
     diaHoy = date.today()
     diaHoy = diaHoy.day + 5
 
-    #En la siguiente secci´on se crea un arreglo con los pesos de cada carácter sumado con el contador y la variable diaHoy. 
+    #En la siguiente sección se crea un arreglo con los pesos de cada carácter sumado con el contador y la variable diaHoy. 
     Arr_Pesos = []
     count = 1
     for i in palabra:
