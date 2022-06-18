@@ -17,16 +17,13 @@ def hash(palabra):
     39:'D',40:'E',41:'F',42:'G',43:'H',44:'I',45:'J',46:'K',47:'L',48:'M',49:'N',50:'O',51:'P',52:'Q',53:'R',54:'S',55:'T',56:'U',57:'V',
     58:'W',59:'X',60:'Y',61:'Z',62:' ', 63:',', 64:'.', 65:';', 66:':', 67:'-', 68:'_', 69:'!', 70:'?', 71:'¡', 72:'¿', 73:'"', 74:"'"}
 
-    #tomamos el tamaño y el valor de la primera letra del string en el diccionario
-    #verificamos si el caracter se encuentra en el diccionario
-    size2 = int(len(palabra))
-    
+    #Verificamos si el primer caracter se encuentra en el diccionario
+    #Y verificamos su valor correspondiente 
     if palabra[0] not in diccionario.keys():
         return -1
     primera = diccionario[palabra[0]]
     contador = 0
-    #en el caso de que la palabra contenga menos de 55 caracteres, se completa con ceros
-    
+
     flag = True
     while(flag):
         if(len(palabra)%55==0):
