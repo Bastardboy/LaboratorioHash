@@ -24,6 +24,8 @@ def hash(palabra):
     primera = diccionario[palabra[0]]
     contador = 0
 
+    #La idea de esta parte de código es verificar si el modulo de 55 es 0 
+    #para poder dividirla luego en 55 tener un numero entero y terminar obteniendo "palabra"
     flag = True
     while(flag):
         if(len(palabra)%55==0):
