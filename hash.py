@@ -97,7 +97,6 @@ def hash(palabra):
 #la entropia se calcula como el largo de la palabra ingresada por el logaritmo en base 2 de la base utilizada:
 def entropia(palabra):
     entropia =55*math.log(74,2)
-
     print("La entropia de ",palabra," es: ", entropia) 
 
 def tiempo(palabra):
