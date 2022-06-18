@@ -70,13 +70,13 @@ def hash(palabra):
             suma = suma + Arr_Pesos[i] 
             contadordivision = 0
             
-            if(suma<=74):
+            if(suma<=73):
                 salida = salida + str(diccionario2.get(suma))
             else:
                 booleano = True
                 num = suma
                 while(booleano):
-                    if(num <= 74):
+                    if(num <= 73):
                         booleano = False
                         salida = salida + str(diccionario2.get(num))
                         num = suma
